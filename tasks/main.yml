@@ -1,7 +1,7 @@
 ---
 - name: Import role to install Docker
   import_role:
-    name: docker-role
+    name: docker_role
 
 - name: Pull an image with nginx
   docker_image:
