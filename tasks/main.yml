@@ -7,7 +7,12 @@
   docker_image:
     name: nginx:latest
 
-- name: Replace nginx load-balancer config to volume for docker container
+- name: Create directory for volume for docker container
+  file:
+    path: /etc/docker/nginx
+    state: directory
+
+- name: Replace nginx load-balancer config to volume for docker container 
   template:
     src=load-balancer.conf
     dest=/etc/docker/nginx/load-balancer.conf
